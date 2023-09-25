@@ -1,25 +1,14 @@
-class Bankaccount:
-  def __init__(self,account_number,account_holdername, initial_balance=0.0):
-    self.__account_number = account_number
-    self.__account_holdername = account_holdername
-    self.__account_balance = initial_balance
-  def deposit (self,amount):
-    if amount > 0:
-      self.__account_balance += amount
-      print("Deposited ₹{}. New balance: ₹{}".format(amount,self.__account_balance))
-    else:
-      print("Invalid deposit amount")
-  def withdraw (self, amount):
-    if amount > 0 and amount <= self.__account_balance:
-      self.__account_balance -= amount
-      print("withdraw ₹{}. New balance: ₹{}".format(amount,self.__account_balance))
-    else:
-      print("Invalid withdrawal amount or insufficient balance")
-  def display_balance(self):
-    print("Account balance for {} (Account #{}): ₹{}".format(self.__account_holdername,self.__account_number,self.__account_balance))
-account=Bankaccount(account_number="123456789",account_holdername="Abinaya",initial_balance=5000.0)
-account.display_balance()
-account.deposit(500.0)
-account.withdraw(200.0)
-account.withdraw(20000.0)
-account.display_balance()
+def linearSearchProduct (ProductList, TargetProduct):
+  indices = []
+  for index,Product in enumerate(ProductList): 
+    if Product == TargetProduct:
+     indices.append(index)
+
+  return indices
+
+
+# Example usage:
+Products =["shoes", "boot", "loafer", "shoes", "sandal","shoes"]
+Target = "shoes"
+Result = linearSearchProduct(Products, Target)
+print(Result)
